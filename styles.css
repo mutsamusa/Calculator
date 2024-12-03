@@ -18,10 +18,11 @@ body {
 .display {
     background-color: hsl(0, 0%, 60%);
     text-align: right;
-    font-size: 2rem;
+    font-size: 3rem;
     overflow-x: auto;
     color: hsl(0, 0%, 100%);
-    height: 50px;
+    height: 80px;
+    text-align: right;
 
 }
 

@@ -56,3 +56,41 @@ function setOperator(value) {
     currentInput = "0";
 }
 
+//performing the calculation
+function calculate(){
+    if (operator === null || previousInput === "") return;
+
+    const prev = parseFloat(previousInput);
+    const current = parseFloat(currentInput);
+
+    switch (operator) {
+        case "+":
+            currentInput = (prev + current).toString();
+            break;
+        case "-":
+            currentInput = (prev - current).toString();
+            break;
+        case "*":
+            currentInput = (prev * current).toString();
+            break;
+        case "/":
+            currentInput = current === 0 ? "Error" : (prev / current).toString();
+            break;
+    }
+
+    operator = null;
+    previousInput = "";
+    updateDisplay();
+}
+
+//clearing display
+clearButton.addEventListener("click", () => {
+    currentInput = "0";
+    previousInput = "";
+    operator = null;
+    updateDisplay();
+});
+
+//initialising display
+updateDisplay();
+
